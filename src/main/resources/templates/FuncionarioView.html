@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+
+    <div class="pagina"> 
+        <main>
+            <h2>CADASTRO</h2>
+
+            <div class = "cadastro">
+                <form th:action="@{/salvar}" method="POST">
+                    <input type="text" name="nome" placeholder="nome"/>
+                    <input type="text" name="cargo" placeholder="cargo"/>
+                    <input type="text" name="CPF" placeholder="CPF"/>
+                    <input type="text" name="endereco" placeholder="endereço"/>
+                    
+                    <button className="button" type="submit"> Cadastrar </button>
+                </form> 
+                
+                <div class="alert" th:if="${msg}">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <strong th:text="${msg}"></strong>
+                </div>
+
+            </div>
+        </main>
+        <aside>
+            <div class="tabela">
+                <h2>FUNCIONARIOS</h2>
+                        <table width="500px">
+                            <thead>   
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Cargo</th>
+                                <th>CPF</th>
+                                <th>Endereço</th>
+                            </thead>
+                                <tr th:each="funcionarios:${funcionarios}">
+                                <td th:text="${funcionarios?.id}"/>
+                                <td th:text="${funcionarios?.nome}" />
+                                <td th:text="${funcionarios?.cargo}" />
+                                <td th:text="${funcionarios?.CPF}" />
+                                <td th:text="${funcionarios?.endereco}" />
+                        </tr>
+                        </table>
+                        
+            </div>
+        </aside>
+    </div>
+    
+
+</body>
+</html>

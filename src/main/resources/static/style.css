@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: white;
+}
+
+main{
+    background: white;
+    grid-area: c;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.alert{
+    display: grid;
+    justify-content: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: 1px solid black;
+}
+
+.strong{
+    display: grid;
+    justify-content: center;
+}
+
+.closebtn
+{
+    display: grid;
+    cursor: pointer;
+    font-size: 22px;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width: 10px;
+    margin-left: 10px;
+
+}
+
+aside
+{
+    background: white;
+    grid-area: t;
+}
+
+.pagina{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: ". c ."
+                         ". t ."
+}
+
+.cadastro{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; 
+}
+
+form{
+    display: grid;
+    justify-content: center;
+    grid-column: 2/3;
+}
+
+input{
+    margin: 5px;
+    padding: 5px;
+}
+
+button{
+    display: grid;
+    justify-content: center;
+    width: 50%;
+    margin: 10px 45px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    opacity: 0.8;
+    
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.tabela{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    justify-content: center;
+
+}
+
+table{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 1000px;
+    border: 1px solid black;
+    
+}
+
+th{
+    background: black;
+    color: white;
+}
+
+td{
+    border: 1px solid black;
+    text-align: center;
+}
